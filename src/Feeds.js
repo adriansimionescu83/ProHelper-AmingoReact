@@ -1,19 +1,18 @@
-import React from 'react';
+import './css/creative.css';
+import React, {useContext, useState} from 'react';
+import AppContext from './AppContext';
 
 const MyFeed = (prop) => {
-    const myStyle = {
-      width: "18rem"
-    }
-  
-  return (
-  <div className="card" style={myStyle}>
-    <h2>
-    <img src={prop.image} className="card-img-top" alt="Testimonial" width="200" height="200"/></h2>
-    <div className="card-body">
-      <h5 className="card-title">{prop.title}</h5>
-      <p className="card-text">{prop.body}</p>
-        <a href="#" className="btn btn-primary">{prop.button}</a>
+return (   
+  <div className="media border p-3">
+    <div className="media-left">
+      <img className="img-fluid" src={prop.image} alt={prop.title} className="mr-3 mt-3 rounded" width="160"/>
     </div>
+    <div className="media-body">
+      <h4 className="media-heading">{prop.title}</h4>
+      <p>{prop.description}</p>
+    </div>
+    <hr/>
   </div>
   )
   }
