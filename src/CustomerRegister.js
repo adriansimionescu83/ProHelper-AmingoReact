@@ -10,7 +10,7 @@ const CustomerRegister = () => {
 
     const sendRegistration = () => {
         // Fetch request goes
-        fetch('http://localhost:4010/customer/register', 
+        fetch(`${process.env.REACT_APP_BACKEND_URL}customer/register`, 
         {
             method: 'POST',
             headers: {"Content-Type": "application/json"},

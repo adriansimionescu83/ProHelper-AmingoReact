@@ -10,7 +10,7 @@ const Workers = ()=>{
     const [globalState, setGlobalState] = useContext(
         AppContext
     )
-    fetch('http://localhost:4010/worker/all')
+    fetch(`${process.env.REACT_APP_BACKEND_URL}worker/all`)
         .then(response => response.json())
         .then(json=> {
             setState(   
