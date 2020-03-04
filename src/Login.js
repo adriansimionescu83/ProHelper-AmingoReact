@@ -10,7 +10,7 @@ const Login = ()=>{
         {saved: false}
     )
 
-    const sendRegistration = () => {
+    const sendLogin = () => {
         // Fetch request goes
         fetch(`${process.env.REACT_APP_BACKEND_URL}customer/login`, 
         {
@@ -21,7 +21,21 @@ const Login = ()=>{
                 password: customerPassword.value,                
             })
         })
-        .then(response =>setState({...state, saved: true}))
+        .then(
+            (response)=>response.json()
+        )
+        .then(
+            (result)=> {
+                // 1. Save the JWT in sessionStorage
+                sessionStorage.setItem('jwt', result.token)
+
+                // 2. Set the loggedIn global state to true
+                setGlobalState({
+                    ...globalState,
+                    loggedIn: true
+                })
+            }
+        )
     }
 
 if(state.saved === false) {
@@ -40,7 +54,7 @@ if(state.saved === false) {
           <input type="checkbox" value="remember-me" wtx-context="0CCDEB60-7E8B-4407-8B58-7A266D8DF1FA"/> Remember me
         </label>
       </div>
-      <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button onClick={sendLogin} className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
     </div>  
 

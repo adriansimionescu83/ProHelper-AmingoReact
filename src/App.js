@@ -28,7 +28,7 @@ const LayoutRoute = (prop) =>{
 const App = () => {
     const [globalState, setGlobalState] = useState(
         {
-          loggedIn: false,
+            loggedIn: sessionStorage.getItem('jwt') ? true : false,
         }
     )
     return(
