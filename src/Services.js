@@ -12,7 +12,7 @@ const Services = ()=>{
         const [globalState, setGlobalState] = useContext(
             AppContext
         )
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/services/all`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}services/all`)
             .then(response => response.json())
             .then(json=> {
                 setState(   
