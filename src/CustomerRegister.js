@@ -30,7 +30,7 @@ const CustomerRegister = () => {
         return (
             <div className="container feed-form">
             <img className="mb-4" src="https://img.icons8.com/cute-clipart/2x/login-rounded-down.png" alt="" width="72" height="72"/>
-            <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+         <h1 className="h3 mb-3 font-weight-normal">Please register</h1>
             <form>
             <div className="form-row">
                 <div className="form-group col-md-6">
