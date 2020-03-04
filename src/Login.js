@@ -12,13 +12,13 @@ const Login = ()=>{
 
     const sendRegistration = () => {
         // Fetch request goes
-        fetch('http://localhost:4010/customer/login', 
+        fetch(`${process.env.REACT_APP_BACKEND_URL}customer/login`, 
         {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 email: customerEmail.value,
-                password: customerPassword.value                
+                password: customerPassword.value,                
             })
         })
         .then(response =>setState({...state, saved: true}))

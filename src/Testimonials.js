@@ -13,7 +13,7 @@ const Testimonials = ()=>{
         AppContext
     )
 
-    fetch('http://localhost:4010/testimonials/all')
+    fetch(`${process.env.REACT_APP_BACKEND_URL}testimonials/all`)
     .then(response => response.json())
     .then(json=> {
         setState(   
